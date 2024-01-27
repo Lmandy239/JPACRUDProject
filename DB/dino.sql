@@ -49,7 +49,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `Dinosaurs`;
 INSERT INTO `Dinosaur` (`id`, `name`, `description`, `diet`) VALUES (1, 'Allosaurus', 'Large bipedal predator ', 'Carnivore');
-INSERT INTO `Dinosaur` (`id`, `name`, `description`, `diet`) VALUES (2, 'Triceratops', 'Large thre-horned dinosaur', 'Herbivore');
+INSERT INTO `Dinosaur` (`id`, `name`, `description`, `diet`) VALUES (2, 'Triceratops', 'Large three-horned dinosaur', 'Herbivore');
 INSERT INTO `Dinosaur` (`id`, `name`, `description`, `diet`) VALUES (3, 'T-Rex', 'Large bipedal predator ', 'Carnivore');
 
 COMMIT;

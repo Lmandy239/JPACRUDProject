@@ -22,4 +22,41 @@ public class DinosaurDAOImpl implements DinosaurDAO {
 		return dino;
 	}
 
+	@Override
+	public Dinosaur createDinosaur(Dinosaur dino) {
+		String jpql = "INSERT INTO Dinosaur (id, name, description, diet) VALUES (:id, :name, :description, :diet)";
+
+		em.createQuery(jpql).setParameter("id", dino.getId()).setParameter("name", dino.getName())
+				.setParameter("description", dino.getDescription()).setParameter("diet", dino.getDiet())
+				.executeUpdate();
+
+		return dino;
+	}
+
+	@Override
+	public boolean deleteDinosaurById(int id) {
+		String jpql = "DELETE FROM Dinosaur d WHERE d.id = :id";
+		int deletedCount = em.createQuery(jpql)
+				.setParameter("id", id)
+				.executeUpdate();
+
+		return deletedCount == 1;
+	}
+
+	@Override
+	public Dinosaur updateDinosaurById(Dinosaur dino) {
+
+		Dinosaur existingDino = em.find(Dinosaur.class, dino.getId());
+
+		if (existingDino != null) {
+			existingDino.setName(dino.getName());
+			existingDino.setDescription(dino.getDescription());
+			existingDino.setDiet(dino.getDiet());
+
+			return existingDino;
+		}
+
+		return null;
+	}
+
 }
