@@ -6,5 +6,5 @@ public interface DinosaurDAO {
 	Dinosaur findById(int id);
 	Dinosaur createDinosaur(Dinosaur dino);	
 	boolean deleteDinosaurById(int id);
-	Dinosaur updateDinosaurById(Dinosaur dino);
+	boolean updateDinosaur(Dinosaur dino);
 }

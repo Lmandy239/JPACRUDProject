@@ -50,12 +50,13 @@ public class DinosaurController {
 		}
 	}
 	@PostMapping(path = "updateDino.do")
-	public String updateDino(@RequestParam("id") int id, Model model) {
-		
-		
-		
-		return null;
-	
+	public String updateDino(@ModelAttribute Dinosaur dino, Model model) {
+		boolean updateDino = dinoDAO.updateDinosaur(dino);
+	if(updateDino) {
+		return "confirmation";
+	}else {
+		return "error";
+	}
 	}
 
 }

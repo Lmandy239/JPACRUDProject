@@ -44,19 +44,18 @@ public class DinosaurDAOImpl implements DinosaurDAO {
 	}
 
 	@Override
-	public Dinosaur updateDinosaurById(Dinosaur dino) {
-
-		Dinosaur existingDino = em.find(Dinosaur.class, dino.getId());
-
-		if (existingDino != null) {
-			existingDino.setName(dino.getName());
-			existingDino.setDescription(dino.getDescription());
-			existingDino.setDiet(dino.getDiet());
-
-			return existingDino;
-		}
-
-		return null;
+	public boolean updateDinosaur(Dinosaur dino) {
+		String jpl = "UPDATE Dinosaur d SET d.name = :name, d.description = :description, d.diet = :diet WHERE d.id = :id";
+		
+		int updateDino = em.createQuery(jpl)
+		.setParameter("id", dino.getId())
+		.setParameter("name", dino.getName())
+		.setParameter("description", dino.getDescription())
+		.setParameter("diet", dino.getDiet())
+		.executeUpdate();
+		
+		
+		return updateDino == 1;
 	}
 
 }
