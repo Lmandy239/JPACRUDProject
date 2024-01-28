@@ -35,8 +35,8 @@
                     <br>
                 </div>
                 <div class="column">
-                    <form action="deleteDino.do" method="POST">
-                         <input class="boton" type="button" value="Show all Dinosaurs" name="id"/>
+                    <form action="findall.do" method="POST">
+                    <input type="submit" value="Show All Dinosaurs"/>
                     </form>
                 <img class ="dino" src="/images/pic3.png" alt = "dino paw">
              

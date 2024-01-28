@@ -1,5 +1,7 @@
 package com.skilldistillery.dinosaurs.data;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.dinosaurs.entities.Dinosaur;
@@ -57,5 +59,15 @@ public class DinosaurDAOImpl implements DinosaurDAO {
 		
 		return updateDino == 1;
 	}
+
+	@Override
+	public List<Dinosaur> findAll() {
+		String jpql = "SELECT dinosaur FROM Dinosaur dinosaur";
+		List<Dinosaur> dinosaurs = em.createQuery(jpql, Dinosaur.class).getResultList();
+		
+		return dinosaurs;
+	}
+	
+	
 
 }

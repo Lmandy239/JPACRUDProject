@@ -1,8 +1,11 @@
 package com.skilldistillery.dinosaurs.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +25,15 @@ public class DinosaurController {
 		return "index";
 	}
 
+	
+	@PostMapping(path = "findall.do")
+	public String findAll(Model model) {
+	    List<Dinosaur> dinosaurs = dinoDAO.findAll();
+	    model.addAttribute("dinosaurs", dinosaurs);
+	    return "list";
+	}
+
+	
 	@PostMapping(path = "getDinosaur.do", params = "id")
 	public String getDinosaurById(@RequestParam("id") int id, Model model) {
 		Dinosaur dino = dinoDAO.findById(id);
