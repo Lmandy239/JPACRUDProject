@@ -10,27 +10,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert Id here</title>
 
-    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container three-col">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-6 leftbar">
-                <form action="getDinosaur.do" method="POST">
-                    Show Dino: <input type="text" name="id" />
-                     <input type="submit" value="Show Dinosaur By Id" />
-                </form>
-                <br>
-                <form action="deleteDino.do" method="POST">
-                    Delete Dino: <input type="text" name="id" /> 
-                    <input type="submit" value="Delete Dinosaur By Id" />
-                </form>
-                <br>
+            <div class="col-md-4 leftbar">
+                <div class="column">
+                    <form action="getDinosaur.do" method="POST">
+                       <h3>Show Dinosaur By ID:</h3><input type="text" name="id" />
+                        <input type="submit" value="Search" />
+                    </form>
+                    <br>
+                </div>
+                <div class="column">
+                    <form action="deleteDino.do" method="POST">
+                        <h3>Delete Dinosaur By ID:</h3> <input type="text" name="id" />
+                        <input type="submit" value="Delete" />
+                    </form>
+                    <br>
+                </div>
+                <div class="column">
+                    <form action="deleteDino.do" method="POST">
+                         <input class="boton" type="button" value="Show all Dinosaurs" name="id"/>
+                    </form>
+                <img class ="dino" src="/images/pic3.png" alt = "dino paw">
+             
+                </div>
             </div>
-            <div>
+            <div class="col-md-4">
                 <form action="createDino.do" method="POST">
                     <h3>Add Dinosaur</h3>
                     <label for="id">ID:</label>
@@ -47,11 +59,12 @@
                     <br>
                     <br>
                     <input type="submit" value="Add Dinosaur">
+                    <img class ="dino" src="/images/dino1.png" alt = "dino paw">
                 </form>
             </div>
-            <div class="col rightbar">
+            <div class="col-md-4 rightbar">
                 <form action="updateDino.do" method="POST">
-                    <h3>Update Dinosaur By Id</h3>
+                    <h3>Update Dinosaur By ID</h3>
                     <label for="id">ID:</label>
                     <input type="text" name="id" value="">
                     <br>
@@ -67,6 +80,7 @@
                     <br>
                     <input type="submit" value="Update Dinosaur">
                 </form>
+                    <img class ="dino" src="/images/dino2.png" alt = "dino paw">
             </div>
         </div>
     </div>
