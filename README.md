@@ -4,7 +4,7 @@
 
 Basic Web application that implements a CRUD system. This project utilizes a MySQL database with a single table and entity.
 
-##Instructions
+###Instructions
 
 ### How to Use
 1. **View All Dinosaurs:**
