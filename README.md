@@ -4,7 +4,6 @@
 
 Basic Web application that implements a CRUD system. This project utilizes a MySQL database with a single table and entity.
 
-###Instructions
 
 ### How to Use
 1. **View All Dinosaurs:**
@@ -35,7 +34,7 @@ Basic Web application that implements a CRUD system. This project utilizes a MyS
 5. Integrating a Spring MVC project with a JPA project.
 6. Performing basic CRUD operations.
 
-###Technologies Used
+## Technologies Used
 
 - Spring Boot
 - JPA
