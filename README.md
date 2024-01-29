@@ -35,7 +35,7 @@ Basic Web application that implements a CRUD system. This project utilizes a MyS
 5. Integrating a Spring MVC project with a JPA project.
 6. Performing basic CRUD operations.
 
-##Technologies Used
+###Technologies Used
 
 - Spring Boot
 - JPA
